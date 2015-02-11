@@ -1,0 +1,10 @@
+{
+  "name": "socketiochat",
+  "version": "0.0.1",
+  "description": "image-service",
+  "dependencies": {
+    "express": "4.10.7",
+    "pubnub": "3.7.8",
+    "underscore": "^1.7.0"
+  }
+}
