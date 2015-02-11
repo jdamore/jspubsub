@@ -30,6 +30,8 @@ var subscribe = function(event_type) {
 }
 
 
+
+
 app.get('/image/:pizza_name', function(req, res){
 	var image = _.find(images, function(image) { return image.pizza_name==req.param('pizza_name') });
 	res.redirect(302, image.pizza_image_url);
@@ -42,6 +44,7 @@ app.get('/images', function(req, res){
 app.get('/', function(req, res) {
   res.sendFile(__dirname + '/index.html');
 });
+
 
 http.listen(3001, function(){
 	subscribe('pizza_created');
