@@ -1,3 +1,4 @@
 
   curl -v -H "Content-Type: application/json" -X POST -d '{"name":"firebreather"}' http://127.0.0.1:3000
+  curl http://127.0.0.1:3000
   curl -v -H "Content-Type: application/json" -X POST -d @pizza.json http://127.0.0.1:3000
