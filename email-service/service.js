@@ -19,11 +19,11 @@ app.get('/', function(req, res){
 
 http.listen(3001, function() {
 
-	eventStore.history('customer_created', function(customer) {
-		if(!hasWelcomeEmail(customer)) {
-			sendWelcomeEmail(customer);
-		}
-	});
+	// eventStore.history('customer_created', function(customer) {
+	// 	if(!hasWelcomeEmail(customer)) {
+	// 		sendWelcomeEmail(customer);
+	// 	}
+	// });
 
  	eventStore.subscribe('customer_created', function(customer) {
 		sendWelcomeEmail(customer);
