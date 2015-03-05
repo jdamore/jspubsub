@@ -14,14 +14,14 @@ app.get('/', function(req, res) {
 });
 
 app.get('/:name', function(req, res) {
-  var customer = _.find(customers, function(c) { return req.param('name') === name });
+  var customer = _.find(customers, function(c) { return req.param('name') === c.name });
   res.send(customer);
 });
 
 app.post('/', function(req, res) {
   customers.push(req.body);
   var event = { 'type':'customer_created', 'data':req.body };
-  publish(event);
+  eventStore.publish(event);
   res.sendStatus(200);
 });
 

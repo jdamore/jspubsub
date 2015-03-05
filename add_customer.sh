@@ -1,4 +1,10 @@
 #!/bin/sh
-echo $*
-curl -v -H "Content-Type: application/json" -X POST -d '{"name":$1, "email":$2}' http://127.0.0.1:3000
-curl -v -H "Content-Type: application/json" -X GET -d http://127.0.0.1:3000
+
+if [ "$#" -ne 2 ]; then
+  echo "Usage: $0 <name> <email>" >&2
+  exit 1
+fi
+
+echo Will add customer with name=$1 and email=$2
+curl -v -H "Content-Type: application/json" -X POST -d "{\"name\":\"$1\", \"email\":\"$2\"}" http://127.0.0.1:3000
+curl -v http://127.0.0.1:3000/$1

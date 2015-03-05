@@ -15,7 +15,8 @@ EventStore.prototype.subscribe = function(event_type, event_handler) {
 	    	if(event.type===event_type) {
 	        event_handler(event.data);
 	      }
-	    }
+	    },
+	    restore: true
 	});
 }
 
