@@ -1,5 +1,3 @@
-Sample nubsub application for microservices tech talk
-
 # JavaScript Services Event Stream Example
 Simple example of using event-based collaboration between two web services: the cuwtomer and email services.
 The services are built using [Node Express](http://expressjs.com), and use [PubNub](www.pubnub.com), a JavaScript event stream based on WebSockets.
